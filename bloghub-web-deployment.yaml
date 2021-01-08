@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bloghub-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blogub-web
+  template:
+    metadata:
+      labels:
+        app: bloghub-web
+    spec:
+      containers:
+      - image: saberhamidi/blogub-web:1.0
+        name: web
+        imagePullPolicy: IfNotPresent

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bloghub-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bloghub-db
+  template:
+    metadata:
+      labels:
+        app: blogub-db
+    spec:
+      volumes:
+        - name: bloghub-vol
+        persistentVolumeClaim:
+          claimName: bloghub-pvc
+      containers:
+      - image: mongo
+        name: db
+        command:
+        - mongod
+        - "--bind_ip"
+        - "0.0.0.0"
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: bloghub-vol
+          mountPath: /data/db
