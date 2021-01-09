@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: blogub-server
+        app: bloghub-server
     spec:
       containers:
       - image: saberhamidi/bloghub-server:1.0

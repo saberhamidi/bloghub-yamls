@@ -8,4 +8,4 @@ spec:
     targetPort: 3000
   selector:
     app: bloghub-server
-  type: LoadBalancer
+  type: ClusterIP

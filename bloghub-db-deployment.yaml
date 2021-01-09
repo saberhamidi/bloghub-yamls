@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: blogub-db
+        app: bloghub-db
     spec:
       volumes:
         - name: bloghub-vol
