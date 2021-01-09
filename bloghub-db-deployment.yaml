@@ -13,7 +13,7 @@ spec:
         app: bloghub-db
     spec:
       volumes:
-        - name: bloghub-vol
+      - name: bloghub-vol
         persistentVolumeClaim:
           claimName: bloghub-pvc
       containers:
